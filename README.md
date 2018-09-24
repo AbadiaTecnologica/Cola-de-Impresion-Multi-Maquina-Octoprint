@@ -3,7 +3,7 @@ Sistema de Gestión y Control de trabajo pendiente en un sistema de fabricación
 
 
 
-# DisplayOctoPrint
+# Cola de Impresión
 Proyecto desarrollado para Abadía Tecnológica por Adrián Varona
 
 En este proyecto se desarrolla una cola de impresión mediante la cual gestionar la carga de trabajo restante para un sistema de varias impresoras 3D.
