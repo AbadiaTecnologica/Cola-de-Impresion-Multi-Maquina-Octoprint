@@ -29,4 +29,4 @@ Consideración | Implicación
 
 ## Copyright y derechos de autor
 
-_DisplayOctoPrint_ está siendo desarrollado en [Ababía Tecnológica]. Si va a usar, distribuir o modificar el código fuente o binarios, debe siempre respetar el acuerdo de licencia y conservar la autoría original.
+Este proyecto está siendo desarrollado en [Ababía Tecnológica]. Si va a usar, distribuir o modificar el código fuente o binarios, debe siempre respetar el acuerdo de licencia y conservar la autoría original.
