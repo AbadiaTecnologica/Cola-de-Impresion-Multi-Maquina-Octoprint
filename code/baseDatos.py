@@ -26,6 +26,13 @@ def reiniciaTabla(nombre):
     mycursor.execute("DELETE FROM "+nombre+";")
     mycursor.execute("ALTER TABLE "+nombre+" AUTO_INCREMENT = 1")
 
+def reiniciaBase():
+    reiniciaTabla("Boquilla")
+    reiniciaTabla("Pedido")
+    reiniciaTabla("Trabajo")
+    reiniciaTabla("Rollo")
+    reiniciaTabla("Maquina")
+    
 #Inserts
 def nuevaBoquilla(tamano):
     sql = "INSERT INTO Boquilla (Tamaño) VALUES (%s);"
@@ -88,3 +95,4 @@ def borrarMaquina(id):
     val = (id,)
     mycursor.execute(sql,val)
     mydb.commit()
+
