@@ -22,16 +22,29 @@ def imprimeTabla(nombre):
     for x in mycursor.fetchall():
         print(x)
 
+def inicializacionPruebas():
+    nuevoPedido("Abadia",4)
+    nuevoPedido("Asti", 7)
+    nuevoRollo("Rojo",230,3)
+    nuevoRollo("Azul", 222, 5)
+    nuevaBoquilla(0.4)
+    nuevaBoquilla(1.2)
+    nuevaMaquina(1,1,"parada")
+    nuevaMaquina(2, 2, "Activa")
+    nuevoTrabajo(1,1,1,1,14,"17-12-1996")
+    nuevoTrabajo(2, 2, 2, 2, 20, "12-09-2000")
+
 def reiniciaTabla(nombre):
     mycursor.execute("DELETE FROM "+nombre+";")
     mycursor.execute("ALTER TABLE "+nombre+" AUTO_INCREMENT = 1")
 
 def reiniciaBase():
+    reiniciaTabla("Trabajo")
+    reiniciaTabla("Maquina")
     reiniciaTabla("Boquilla")
     reiniciaTabla("Pedido")
-    reiniciaTabla("Trabajo")
     reiniciaTabla("Rollo")
-    reiniciaTabla("Maquina")
+
     
 #Inserts
 def nuevaBoquilla(tamano):
@@ -95,4 +108,17 @@ def borrarMaquina(id):
     val = (id,)
     mycursor.execute(sql,val)
     mydb.commit()
+
+##Utiles Web
+def listaTabla(nombre):
+    lista=list()
+    mycursor.execute("SELECT * FROM "+nombre+" ;")
+    lista=mycursor.fetchall()
+    print(lista[0])
+    return lista
+
+# reiniciaBase()
+# inicializacionPruebas()
+# listaTabla("Trabajo")
+
 

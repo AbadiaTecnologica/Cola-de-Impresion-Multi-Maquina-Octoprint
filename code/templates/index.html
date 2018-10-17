@@ -1,6 +1,13 @@
-<!-- Latest compiled and minified CSS -->
+<!--Bootstrap-->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!--CSS-->
 <link rel="stylesheet" href="/static/css/CSSCola.css">
+<!--DataTables-->
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,5 +37,62 @@
 </header>
 
 
+<div class="row">
+    <div class="col-lg-3">
+        PlaceHolder
+    </div>
+    <div class="col-lg-7">
+
+
+        <table id="example" class="table no-footer">
+            <thead>
+
+                <tr>
+                    <th>id</th>
+                    <th>Volumen</th>
+                    <th>Fecha</th>
+                    <th>Pedido</th>
+                    <th>Rollo</th>
+                    <th>Boquilla</th>
+                    <th>Maquina</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for name in lista %}
+                    <tr>
+                        <td class="sorting_1" >{{ name[0] }}</td>
+                        <td>{{ name[1] }}</td>
+                        <td>{{ name[2] }}</td>
+                        <td>{{ name[3] }}</td>
+                        <td>{{ name[4] }}</td>
+                        <td>{{ name[5] }}</td>
+                        <td>{{ name[6] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#example').DataTable( {
+        "order": [[ 3, "desc" ]],
+        "dom": '<"top"i><"bottom"><"clear">'
+    } );
+} );
+</script>
+
+
+
+
+    </div>
+    <div class="col-lg-2">
+        PlaceHolder2
+    </div>
+</div>
+
 </body>
 </html>
+
+
