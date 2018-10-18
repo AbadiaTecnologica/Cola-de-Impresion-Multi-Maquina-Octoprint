@@ -1,11 +1,26 @@
-#AddButton {
-	heigth: 5%;
+html{
+	overflow: hidden;
+}
+
+#AddButtonIm {
+	height: : 5%;
 	width: 5%;
 	float: right;
+	padding: 1%;
 }
 
 #navbar {
     width: 100%;
+}
+
+#fotoLogo{
+	height: 35%;
+	width:	45%;
+	margin: 0;
+}
+
+#formButton{
+	background-color: blue;
 }
 
 .bg-modal{
@@ -18,10 +33,31 @@
     justify-content: center;
     align-items: center;
     z-index: 1;
+    display: none;
 }
 
 .modal-content{
-    width:500px;
-    height:800px;
+    width:40%;
+    height:80%;
     background-color:white;
+    border-radius: 14px;
+    text-align: center;
+    padding: 5%;
+    position: relative;
+
+}
+
+input {
+	width:50%;
+	display: block;
+	margin: 5% auto;
+}
+
+.close{
+	position: absolute;
+	top: 0;
+	color: black;
+	right: 14px;
+	font-size:50px;
+	transform: rotate(45deg);
 }
