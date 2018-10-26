@@ -114,7 +114,6 @@ def listaTabla(nombre):
     lista=list()
     mycursor.execute("SELECT * FROM "+nombre+" ;")
     lista=mycursor.fetchall()
-    print(lista[0])
     return lista
 
 # reiniciaBase()

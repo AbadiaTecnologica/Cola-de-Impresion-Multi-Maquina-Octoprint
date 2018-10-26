@@ -41,16 +41,37 @@
 <div class="bg-modal">
     <div class="modal-content">
         <div class="close">+</div>
-        <form action="">
+        <form method="POST" action="/">
             <img src="/static/images/LogoAbadia.jpg" id="fotoLogo" alt="">
-            <input type="text" placeholder="Id de Trabajo(Opcional)">
-            <input type="text" placeholder="Pedido">
-            <input type="text" placeholder="Boquilla">
-            <input type="text" placeholder="Rollo">
-            <input type="text" placeholder="Maquina">
-            <input type="text" placeholder="Volumen">
-            <input type="text" placeholder="Fecha(dd-mm-aaaa)">
-            <button type="button" class="btn btn-primary">Añadir</button>
+            <div class="hueco col-xs-7">
+                {{form.hidden_tag()}}
+                {{form.id(class="form-control",placeholder="Id")}}
+            </div>
+           <div class="hueco col-xs-7">
+                {{form.hidden_tag()}}
+                {{form.pedido(class="form-control",placeholder="Pedido")}}
+            </div>
+            <div class="hueco col-xs-7">
+                {{form.hidden_tag()}}
+                {{form.boquilla(class="form-control",placeholder="Boquilla")}}
+            </div>
+            <div class="hueco col-xs-7">
+                {{form.hidden_tag()}}
+                {{form.rollo(class="form-control",placeholder="Rollo")}}
+            </div>
+            <div class="hueco col-xs-7">
+                {{form.hidden_tag()}}
+                {{form.maquina(class="form-control",placeholder="Maquina")}}
+            </div>
+            <div class="hueco col-xs-7">
+                {{form.hidden_tag()}}
+                {{form.volumen(class="form-control",placeholder="Volumen")}}
+            </div>
+            <div class="hueco col-xs-7">
+                {{form.hidden_tag()}}
+                {{form.fecha(class="form-control",placeholder="Fecha")}}
+            </div>
+            {{ form.submit(class="btn btn-outline-info") }}
         </form>
     </div>
 
@@ -83,6 +104,7 @@
                     <th>Rollo</th>
                     <th>Boquilla</th>
                     <th>Maquina</th>
+
                 </tr>
             </thead>
 

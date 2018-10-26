@@ -1,9 +1,11 @@
 html{
 	overflow: hidden;
 }
-
+.hueco{
+    margin: 0 auto;
+    float: none;
+}
 #AddButtonIm {
-	height: : 5%;
 	width: 5%;
 	float: right;
 	padding: 1%;
