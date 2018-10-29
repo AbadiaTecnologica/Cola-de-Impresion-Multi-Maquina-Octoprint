@@ -24,9 +24,9 @@ html{
 }
 
 #fotoLogo{
-	height: 35%;
-	width:	45%;
 	margin: 0;
+    width: 25%;
+    height: 25%;
 }
 
 #formButton{
@@ -54,6 +54,8 @@ html{
     text-align: center;
     padding: 5%;
     position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
 
 }
 
@@ -64,10 +66,11 @@ input {
 }
 
 .close{
-	position: absolute;
+	position: fixed;
 	top: 0;
 	color: black;
-	right: 14px;
+	right: 32%;
+    top: 12%;
 	font-size:50px;
 	transform: rotate(45deg);
 }

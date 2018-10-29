@@ -31,8 +31,8 @@ def inicializacionPruebas():
     nuevaBoquilla(1.2)
     nuevaMaquina(1,1,"parada")
     nuevaMaquina(2, 2, "Activa")
-    nuevoTrabajo(1,1,1,1,14,"17-12-1996")
-    nuevoTrabajo(2, 2, 2, 2, 20, "12-09-2000")
+    nuevoTrabajo(1,"trabajo2",1,1,1,14,"17-12-1996")
+    nuevoTrabajo(2,"trabajo1", 2, 2, 2, 20, "12-09-2000")
 
 def reiniciaTabla(nombre):
     mycursor.execute("DELETE FROM "+nombre+";")
@@ -59,9 +59,9 @@ def nuevoPedido(dueno,prioridad):
     mycursor.execute(sql, val)
     mydb.commit()
 
-def nuevoTrabajo(idPedido,idBoquilla,idRollo,idMaquina,volumen,Fecha):
-    sql = "INSERT INTO Trabajo (Pedido_idPedido,Boquilla_idBoquilla,Rollo_idRollo,Maquina_idMaquina,volumen,Fecha_Entrega) VALUES (%s,%s,%s,%s,%s,%s);"
-    val = (idPedido,idBoquilla,idRollo,idMaquina,volumen,Fecha)
+def nuevoTrabajo(idPedido,nombre,idBoquilla,idRollo,idMaquina,volumen,Fecha):
+    sql = "INSERT INTO Trabajo (Pedido_idPedido,Nombre,Boquilla_idBoquilla,Rollo_idRollo,Maquina_idMaquina,volumen,Fecha_Entrega) VALUES (%s,%s,%s,%s,%s,%s,%s);"
+    val = (idPedido,nombre,idBoquilla,idRollo,idMaquina,volumen,Fecha)
     mycursor.execute(sql, val)
     mydb.commit()
 
@@ -114,6 +114,7 @@ def listaTabla(nombre):
     lista=list()
     mycursor.execute("SELECT * FROM "+nombre+" ;")
     lista=mycursor.fetchall()
+    print(lista)
     return lista
 
 # reiniciaBase()

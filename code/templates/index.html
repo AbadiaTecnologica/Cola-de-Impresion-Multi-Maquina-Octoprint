@@ -42,7 +42,7 @@
     <div class="modal-content">
         <div class="close">+</div>
         <form method="POST" action="/">
-            <img src="/static/images/LogoAbadia.jpg" id="fotoLogo" alt="">
+            <img src="/static/images/logoAbadia.png" id="fotoLogo" alt="">
             <div class="hueco col-xs-7">
                 {{form.hidden_tag()}}
                 {{form.id(class="form-control",placeholder="Id")}}
@@ -97,7 +97,8 @@
             <thead>
 
                 <tr>
-                    <th>id</th>
+                    <th>Id</th>
+                    <th>Nombre</th>
                     <th>Volumen</th>
                     <th>Fecha</th>
                     <th>Pedido</th>
@@ -112,6 +113,7 @@
                 {% for name in lista %}
                     <tr>
                         <td>{{ name[0] }}</td>
+                        <td>{{ name[7].decode() }}</td>
                         <td>{{ name[1].decode() }}</td>
                         <td>{{ name[2].decode() }}</td>
                         <td>{{ name[3] }}</td>
@@ -133,7 +135,7 @@ $(document).ready(function() {
 } );
 
 $('#mySearchText').on( 'keyup click', function () {
-table.search($('#mySearchText').val()).draw();
+$('#example').DataTable().search($('#mySearchText').val()).draw();
 } );
 
 </script>

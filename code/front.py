@@ -11,9 +11,9 @@ base.imprimeTabla("Trabajo")
 def main():
     primeraForm=AnadirForm()
     for elemento in primeraForm:
-        print(elemento.name)
+        print(elemento.data)
     return render_template('index.html',form=primeraForm,lista=base.listaTabla("Trabajo"))
-
+#
 
 
 
