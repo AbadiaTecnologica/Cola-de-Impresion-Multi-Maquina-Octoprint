@@ -5,12 +5,20 @@ html{
     margin: 0 auto;
     float: none;
 }
+
+
 #AddButtonIm {
 	width: 5%;
 	float: right;
 	padding: 1%;
 }
 
+
+
+#mySearchText{
+    padding-left: 0;
+    margin-top: 0;
+}
 #navbar {
     width: 100%;
 }
