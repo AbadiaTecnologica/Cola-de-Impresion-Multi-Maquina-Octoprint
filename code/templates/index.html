@@ -17,6 +17,19 @@
 <body>
 
 
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+{% block body %}{% endblock %}
+
+
+
 <header>
     <!-- Nav bar menu-->
     <div class="row">
@@ -42,10 +55,14 @@
     <div class="modal-content">
         <div class="close">+</div>
         <form method="POST" action="/">
-            <img src="/static/images/logoAbadia.png" id="fotoLogo" alt="">
+            <!--<img src="/static/images/logoAbadia.png" id="fotoLogo" alt=""> -->
             <div class="hueco col-xs-7">
                 {{form.hidden_tag()}}
                 {{form.id(class="form-control",placeholder="Id")}}
+            </div>
+            <div class="hueco col-xs-7">
+                {{form.hidden_tag()}}
+                {{form.nombre(class="form-control",placeholder="Nombre")}}
             </div>
            <div class="hueco col-xs-7">
                 {{form.hidden_tag()}}

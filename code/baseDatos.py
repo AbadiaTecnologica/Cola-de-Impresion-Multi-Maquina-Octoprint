@@ -114,11 +114,25 @@ def listaTabla(nombre):
     lista=list()
     mycursor.execute("SELECT * FROM "+nombre+" ;")
     lista=mycursor.fetchall()
-    print(lista)
+    #print(lista)
     return lista
+
+def getColumna(tabla,columna):
+    lista=list()
+    lista2=list()
+    mycursor.execute("SELECT "+columna+" FROM "+tabla+" ;")
+    lista=mycursor.fetchall()
+    for elemento in lista:
+        lista2.append(str(elemento[0]))
+
+    return lista2
+
+
+
+
 
 # reiniciaBase()
 # inicializacionPruebas()
 # listaTabla("Trabajo")
-
+# getColumna("Pedido","idPedido")
 
