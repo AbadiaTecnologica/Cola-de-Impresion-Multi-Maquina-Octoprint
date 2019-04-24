@@ -1,5 +1,6 @@
 from wtforms import Form, StringField,validators,SubmitField,DateField
 from wtforms.fields.html5 import DateField
+from flask_wtf.file import FileField, FileRequired,FileAllowed
 from flask_wtf import FlaskForm
 from flask import flash
 import baseDatos
@@ -13,6 +14,7 @@ class  AnadirForm(FlaskForm):
     maquina=StringField('maquina',[validators.InputRequired(),validators.AnyOf(baseDatos.getColumna("Maquina","idMaquina"))])
     volumen=StringField('volumen',[validators.InputRequired()])
     fecha= DateField('fecha',[validators.InputRequired()])
+    file = FileField('Introduce Gcode',validators=[FileRequired()])
     submit = SubmitField('Submit')
 
 

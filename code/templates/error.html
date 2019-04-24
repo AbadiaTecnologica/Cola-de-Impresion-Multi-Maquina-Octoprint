@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        <form method="POST" action="/">
+            <!--<img src="/static/images/logoAbadia.png" id="fotoLogo" alt=""> -->
+            <div class="hueco col-xs-7">
+                {{form.hidden_tag()}}
+                {{form.id(class="form-control",placeholder="Id")}}
+            </div>
+           <div class="hueco col-xs-7">
+                {{form.hidden_tag()}}
+                {{form.pedido(class="form-control",placeholder="Pedido")}}
+            </div>
+            <div class="hueco col-xs-7">
+                {{form.hidden_tag()}}
+                {{form.boquilla(class="form-control",placeholder="Boquilla")}}
+            </div>
+            <div class="hueco col-xs-7">
+                {{form.hidden_tag()}}
+                {{form.rollo(class="form-control",placeholder="Rollo")}}
+            </div>
+            <div class="hueco col-xs-7">
+                {{form.hidden_tag()}}
+                {{form.maquina(class="form-control",placeholder="Maquina")}}
+            </div>
+            <div class="hueco col-xs-7">
+                {{form.hidden_tag()}}
+                {{form.volumen(class="form-control",placeholder="Volumen")}}
+            </div>
+            <div class="hueco col-xs-7">
+                {{form.hidden_tag()}}
+                {{form.fecha(class="form-control",placeholder="Fecha")}}
+            </div>
+            {{ form.submit(class="btn btn-outline-info") }}
+        </form>
+</body>
+</html>

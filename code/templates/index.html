@@ -54,7 +54,7 @@
 <div class="bg-modal">
     <div class="modal-content">
         <div class="close">+</div>
-        <form method="POST" action="/">
+        <form method="POST" action="/" enctype="multipart/form-data">
             <!--<img src="/static/images/logoAbadia.png" id="fotoLogo" alt=""> -->
             <div class="hueco col-xs-7">
                 {{form.hidden_tag()}}
@@ -88,6 +88,12 @@
                 {{form.hidden_tag()}}
                 {{form.fecha(class="form-control",placeholder="Fecha")}}
             </div>
+             <div class="hueco">
+                {{form.hidden_tag()}}
+                {{form.file(class="form-control",placeholder="File")}}
+            </div>
+
+
             {{ form.submit(class="btn btn-outline-info") }}
         </form>
     </div>
@@ -122,6 +128,7 @@
                     <th>Rollo</th>
                     <th>Boquilla</th>
                     <th>Maquina</th>
+                    <th>Botones</th>
 
                 </tr>
             </thead>
@@ -137,6 +144,7 @@
                         <td>{{ name[4] }}</td>
                         <td>{{ name[5] }}</td>
                         <td>{{ name[6] }}</td>
+                        <td><button onclick="funcionAux()">Imprimir</button></td>
                     </tr>
                 {% endfor %}
             </tbody>
